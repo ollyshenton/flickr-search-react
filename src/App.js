@@ -41,8 +41,9 @@ function App() {
     <div className="text-gray-900 leading-tight flex flex-col min-h-screen">
       <header className="container m-auto">
         <h1 className="text-4xl font-mono py-11">
-          Search someone else's photos
+          Search someone else's photos 📷
         </h1>
+        <p>On load the default search is bicycle 🚲</p>
 
         <form className="Form" onSubmit={handleSubmit}>
           <input
