@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./components/Card";
 import CardsLoading from "./components/CardsLoading";
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
 
 function App() {
   const ListLoading = CardsLoading(Card);
@@ -20,29 +20,29 @@ function App() {
 
     axios.get(apiUrl).then(response => {
       const allImages = response.data.photos;
-      console.log("data", search,response);
+      console.log("data", search, response);
       setAppState({ loading: false, images: allImages });
     });
-  
   }, [setAppState, searchTerm]);
 
-
   // click submit search
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     const search = e.target.search.value;
-    console.log('e', search)
+    console.log("e", search);
     if (search) {
-      setSearchTerm(search)
-      e.target.search.value = '';
+      setSearchTerm(search);
+      e.target.search.value = "";
     }
   };
 
-  return ( 
+  return (
     <div className="text-gray-900 leading-tight flex flex-col min-h-screen">
       <header className="container m-auto">
-        <h1 className="text-4xl font-mono py-11">Search someone else's photos</h1>
+        <h1 className="text-4xl font-mono py-11">
+          Search someone else's photos
+        </h1>
 
         <form className="Form" onSubmit={handleSubmit}>
           <input
@@ -53,7 +53,9 @@ function App() {
             placeholder="Search flickr"
             className="border py-2 px-3 text-grey-darkest border-black "
           />
-          <button className="p-2.5 m-2 text-green-100  duration-150 bg-black focus:shadow-outline ">Search</button>
+          <button className="p-2.5 m-2 text-green-100  duration-150 bg-black focus:shadow-outline ">
+            Search
+          </button>
         </form>
       </header>
 

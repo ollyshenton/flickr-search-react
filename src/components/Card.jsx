@@ -16,17 +16,18 @@ const Card = props => {
                 alt={item.title}
                 className="block h-auto w-full"
               />
-           
-                <header className="flex flex-col leading-tight">
-                  <a
-                    href={`https://www.flickr.com/photos/${item.owner}/${item.id}/`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-current text-blue underline hover:no-underline text-lg pt-2"
-                  >
-                    {item.title}
-                  </a>
-                 <div className="text-sm"><span className="mr-1">by</span> 
+
+              <header className="flex flex-col leading-tight">
+                <a
+                  href={`https://www.flickr.com/photos/${item.owner}/${item.id}/`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-current text-blue underline hover:no-underline text-lg pt-2"
+                >
+                  {item.title}
+                </a>
+                <div className="text-sm">
+                  <span className="mr-1">by</span>
                   <a
                     href={`https://www.flickr.com/photos/${item.owner}/`}
                     target="_blank"
@@ -34,12 +35,16 @@ const Card = props => {
                     className="text-current text-blue underline hover:no-underline"
                   >
                     {item.owner}
-                  </a></div>
-                </header>
-               
-              <footer className="flex flex-col justify-between space-between leading-none pt-2">
+                  </a>
+                </div>
+              </header>
 
-          { item.description._content ? <p className="text-sm">Description: {item.description._content}</p> : null }
+              <footer className="flex flex-col justify-between space-between leading-none pt-2">
+                {item.description._content ? (
+                  <p className="text-sm">
+                    Description: {item.description._content}
+                  </p>
+                ) : null}
 
                 <div className="py-1.5 text-xs">Tags: {item.tags}</div>
               </footer>
