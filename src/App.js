@@ -40,12 +40,12 @@ function App() {
 
   return (
     <div className="text-gray-900 leading-tight flex flex-col min-h-screen bg-grey-100">
-      <header className="bg-yellow-300">
-        <h1 className="container m-auto text-4xl font-mono py-11">
+      <header className="bg-yellow-300 py-4">
+        <h1 className="container m-auto text-4xl font-mono py-8 m-0 pb-2">
           📷 Search someone else's photos on Flickr 📷
         </h1>
-        <p className="container m-auto">
-          On load the default search is bicycle 🚲
+        <p className="container m-auto text-xs">
+          On load the default search is "bicycle" 🚲
         </p>
 
         <form className="Form container m-auto" onSubmit={handleSubmit}>

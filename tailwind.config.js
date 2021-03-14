@@ -3,8 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"]
+      nunito: ["PT Sans", "sans-serif"]
     },
     screens: {
       sm: "640px",
