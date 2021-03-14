@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./components/Card";
 import CardsLoading from "./components/CardsLoading";
+import Search from "./components/Search";
 import Footer from "./components/Footer";
 
 function App() {
@@ -38,25 +39,17 @@ function App() {
   };
 
   return (
-    <div className="text-gray-900 leading-tight flex flex-col min-h-screen">
-      <header className="container m-auto">
-        <h1 className="text-4xl font-mono py-11">
-          Search someone else's photos 📷
+    <div className="text-gray-900 leading-tight flex flex-col min-h-screen bg-grey-100">
+      <header className="bg-yellow-300">
+        <h1 className="container m-auto text-4xl font-mono py-11">
+          📷 Search someone else's photos on Flickr 📷
         </h1>
-        <p>On load the default search is bicycle 🚲</p>
+        <p className="container m-auto">
+          On load the default search is bicycle 🚲
+        </p>
 
-        <form className="Form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            autoFocus
-            autoComplete="off"
-            name="search"
-            placeholder="Search flickr"
-            className="border py-2 px-3 text-grey-darkest border-black "
-          />
-          <button className="p-2.5 m-2 text-green-100  duration-150 bg-black focus:shadow-outline ">
-            Search
-          </button>
+        <form className="Form container m-auto" onSubmit={handleSubmit}>
+          <Search />
         </form>
       </header>
 
