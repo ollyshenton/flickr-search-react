@@ -13,7 +13,7 @@ function App() {
     images: null
   });
 
-  // searches
+  // searches flickr with passed search (default is "bicycle". should be safe sarch, returns 30 per page - could expand to pagingation/infinte with this)
   useEffect(() => {
     setAppState({ loading: true });
     const search = searchTerm;
@@ -21,7 +21,7 @@ function App() {
 
     axios.get(apiUrl).then(response => {
       const allImages = response.data.photos;
-      console.log("data", search, response);
+      // console.log("data", search, response);
       setAppState({ loading: false, images: allImages });
     });
   }, [setAppState, searchTerm]);
@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
 
     const search = e.target.search.value;
-    console.log("e", search);
+
     if (search) {
       setSearchTerm(search);
       e.target.search.value = "";
