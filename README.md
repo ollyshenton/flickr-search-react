@@ -2,6 +2,8 @@
 
 Using Tailwind for styling & required .ENV flickr API key
 
+Built running Node v12.13.1
+
 ## Available Scripts
 
 In the project directory, you can run:
